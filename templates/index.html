@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block main %}
+
+<h1>My Todo List</h1>
+<div class="container">
+  <div>
+    <form action="", method="POST">
+    <input type="text" name="newtask" class="newtask" placeholder="New Task" />
+  </div>
+  <div class="add">
+    <input type="submit" value="Add">
+  </div>
+  </form>
+</div>
+
+<ul class="tasklist">
+    {% for item in tasks %}
+    <li id="eachtask">{{item.new_task}} <a href="{{ url_for('delete', id=item['id']) }}" class="close">X</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
